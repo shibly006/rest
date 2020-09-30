@@ -9,7 +9,7 @@
     public $category_id;
     public $category_name;
     public $title;
-    public $body;
+    public $body; 
     public $author;
     public $created_at;
 
@@ -22,9 +22,8 @@
     public function read() {
       // Create query
       
-      $query = 'SELECT id, Name, Price, Time from ' . $this->table . 'ORDER BY
-                                  Price DESC';
-      
+      $query = 'SELECT id, Name, Price, Time from ' . $this->table . ' ORDER BY Price DESC';
+      // $query = 'SELECT id, Name, Price, Time from ' . $this->table . ;
 
       // Prepare statement
       $stmt = $this->conn->prepare($query);
@@ -34,3 +33,4 @@
 
       return $stmt;
     }
+}

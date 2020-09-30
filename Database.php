@@ -1,4 +1,5 @@
 <?php 
+
   class Database {
     // DB Params
     private $host = 'localhost';
@@ -21,3 +22,4 @@
       return $this->conn;
     }
   }
+
