@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html>
 <style>
-table,th,td {
-  border : 1px solid black;
+table,th,td {  
+  border : 2px solid black;
+  border-color: #263C3A;
   border-collapse: collapse;
+  font-size: 20px;
+  color: #3F689E;
+  background-color: #DAECED;
 }
+
+th{
+  border : 3px solid black;
+  font-weight: bold;
+}
+
 th,td {
   padding: 5px;
 }
+
+h1 {    
+  font-size: 40px;
+  font-weight: bold;
+  color: #0E2F29;
+  background-color: #E3EFF6;
+}
 </style>
+
+
+<header>
+  <title>Products</title>
+
+</header>
+
+
 <body>
 
-<h2>Our Products</h2>
+<h1>Our Products</h1>
 <hr>
 
 <button type="button" onclick='showCustomer()'>Show Products</button>
 
 <br>
-<div id="txtHint">Products are about to load......</div>
+
+ <div id="txtHint">Products are about to load......</div>
+
 
 <script>
 function showCustomer() {
@@ -32,7 +59,7 @@ function showCustomer() {
       document.getElementById("txtHint").innerHTML = this.responseText;
     }
   };
-  
+
   xhttp.open("GET", "read.php", true);
   // xhttp.open("GET", "http://192.168.64.3/rest/read.php", true);
 
