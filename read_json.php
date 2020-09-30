@@ -23,15 +23,8 @@
     // Post array
     $posts_arr = array();
 
-    echo "<table>";
-    
-    echo "<tr> <th>ID</th> <th>Name</th> <th>Price</th> <th>Date</th> </tr>";
-    
-
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
       extract($row);
-
-      echo "<tr> <td>". $id ."</td> <td>" .$Name. "</td> <td>" . $Price . "</td> <td>" . $Time . "</td> </tr>";
 
       $post_item = array(
         'id' => $id,
@@ -45,12 +38,8 @@
       // array_push($posts_arr['data'], $post_item);
     }
 
-      echo "</table>";
-    
-
     // Turn to JSON & output
-      
-    // echo json_encode($posts_arr);
+    echo json_encode($posts_arr);
 
   } else {
     // No Posts

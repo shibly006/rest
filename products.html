@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+<body>
+
+<h2>Our Products</h2>
+<hr>
+
+<button type="button" onclick='showCustomer()'>Show Products</button>
+
+<br>
+<div id="txtHint">Products are about to load......</div>
+
+<script>
+function showCustomer() {
+  var xhttp;  
+  
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      console.log('Output:' + this.responseText);
+      
+    if (this.readyState == 4 && this.status == 200) {
+
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  };
+  // xhttp.open("GET", "read.php", true);
+  xhttp.open("GET", "http://192.168.64.3/rest/read.php", true);
+
+  
+  xhttp.send();
+}
+</script>
+</body>
+</html>
